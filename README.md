@@ -2,6 +2,7 @@
 
 A tweak for iOS 6 (tested on iPhone 4S, iOS 6.1.3, ARMv7): splits compound artist tags
 like `"Artist 1; Artist 2"` inside the Music.app (bundle `com.apple.mobileipod`).
+Made with GLM 5.3 Flash and Gemini 3.8 Flash
 
 ## What it does
 
@@ -138,22 +139,6 @@ UTF-16, plain `strings` does not show them).
 > grouping logic (`AFBuildGroupNames` / `AFRowNames` / wider-artist) is fully intact —
 > that is exactly what the `0.0.2-20+debug` debugging was about.
 
-## Verified on device (iPhone 4S, iOS 6.1.3)
-
-`AF_DIAG 1`, autopilot: the artists list = 3 rows (`All Songs` + two artists).
-
-```
-[names] строки исполнителей: {8668412679042481770 = "Artist 2"; 6289584557699490344 = "Artist 1";}
-[rowlabel] idx=0 'Artist 1' -> 'Artist 1' pid=6289584557699490344
-[rowlabel] idx=0 'Artist 1; Artist 2' -> 'Artist 2' pid=8668412679042481770
-[split] albumArtistPID == 6289584557699490344 -> albumArtist CONTAINS 'Artist 1' => ("Song 1","Song 2")
-[split] albumArtistPID == 8668412679042481770 -> artist CONTAINS 'Artist 2' => ("Song 1","Song 3")
-```
-
-`AF_DIAG 0` (release, verified on `0.0.2-22+debug`) — same result, a 6-line log, no
-autopilot or dumps (log-file output was later removed from work mode entirely, see
-Diagnostics above).
-
 ## Known cosmetic quirks
 
 * In the drill-down of the `Artist 2` group the album subtitle shows `Artist 1`: that is
@@ -164,4 +149,4 @@ Diagnostics above).
 
 ## License
 
-[MIT](LICENSE).
+[MIT](LICENSE)
