@@ -1,0 +1,9 @@
+Package: com.coteyka.artistfix
+Name: ArtistFix
+Version: 0.1.1
+Architecture: iphoneos-arm
+Description: Splits multi-artist tags like "Artist 1; Artist 2" into separate artists in the stock iOS 6 Music app.
+Maintainer: coteyka
+Author: coteyka
+Section: Tweaks
+Depends: mobilesubstrate (>= 0.9.5000), firmware (>= 6.0), firmware (<< 7.0)

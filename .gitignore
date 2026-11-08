@@ -1,0 +1,9 @@
+.theos/
+obj/
+packages/
+*.deb
+.DS_Store
+*.swp
+_diag/
+_scratch/
+scripts/
